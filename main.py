@@ -1,6 +1,5 @@
 from src.web_request import get_source
-from src.parse import parse_html
-from src.parse import get_tags_jobs
+from src.parse import get_links_html
 import sys
 
 def run() -> None:
@@ -18,8 +17,8 @@ def run() -> None:
     # Receives the source for the webpage.
     source = get_source(sys.argv[1]);
     # Checks the text for the keywords and gets the tags.
-    links = get_links_jobs(source, keywords)
-    print(elements_jobs)
+    print("Getting links...")
+    links = get_links_html(source, keywords)
 
 if __name__ == "__main__":
     run()
